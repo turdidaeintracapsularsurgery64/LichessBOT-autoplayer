@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Lichess Edge Stockfish Bot (Local Exe)",
+  "version": "0.1.0",
+  "description": "Plays automatically on lichess using Stockfish running locally on your PC.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://lichess.org/*"],
+  "action": {
+    "default_title": "Lichess Bot",
+    "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://lichess.org/*"],
+      "js": ["src/contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
